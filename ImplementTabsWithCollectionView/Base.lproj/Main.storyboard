@@ -27,28 +27,49 @@
                                     <inset key="sectionInset" minX="2" minY="2" maxX="2" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="60n-a8-SVj">
-                                        <rect key="frame" x="2" y="2" width="190" height="190"/>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="60n-a8-SVj" customClass="card3ViewCell" customModule="ImplementTabsWithCollectionView" customModuleProvider="target">
+                                        <rect key="frame" x="2" y="2" width="181" height="190"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="L2A-aD-UQb">
-                                            <rect key="frame" x="0.0" y="0.0" width="190" height="190"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="181" height="190"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="JC" translatesAutoresizingMaskIntoConstraints="NO" id="gIM-ZV-jxW">
-                                                    <rect key="frame" x="8" y="8" width="174" height="134"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="JC" translatesAutoresizingMaskIntoConstraints="NO" id="gIM-ZV-jxW">
+                                                    <rect key="frame" x="8" y="8" width="165" height="134"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="134" id="sCh-HM-E3A"/>
+                                                        <constraint firstAttribute="width" constant="165" id="yaD-h4-Cch"/>
+                                                    </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="card badshah" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kib-4D-OhE">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="card badshah" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kib-4D-OhE">
                                                     <rect key="frame" x="8" y="150" width="157" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="SOx-g4-xrj"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="19"/>
                                                     <color key="textColor" red="0.58081901069999997" green="0.088427625600000004" blue="0.31863921880000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="kib-4D-OhE" secondAttribute="trailing" constant="16" id="Hpz-9J-Pft"/>
+                                                <constraint firstItem="gIM-ZV-jxW" firstAttribute="leading" secondItem="L2A-aD-UQb" secondAttribute="leading" constant="8" id="JnV-3O-qW5"/>
+                                                <constraint firstItem="kib-4D-OhE" firstAttribute="leading" secondItem="L2A-aD-UQb" secondAttribute="leading" constant="8" id="a6a-Yh-rvs"/>
+                                                <constraint firstItem="kib-4D-OhE" firstAttribute="top" secondItem="gIM-ZV-jxW" secondAttribute="bottom" constant="8" id="eTJ-sM-zT2"/>
+                                                <constraint firstItem="gIM-ZV-jxW" firstAttribute="top" secondItem="L2A-aD-UQb" secondAttribute="top" constant="8" id="kqo-mD-NDs"/>
+                                                <constraint firstAttribute="trailing" secondItem="gIM-ZV-jxW" secondAttribute="trailing" constant="8" id="wL8-dR-zjq"/>
+                                            </constraints>
                                         </collectionViewCellContentView>
+                                        <connections>
+                                            <outlet property="imageCard3View" destination="gIM-ZV-jxW" id="PfT-mH-18P"/>
+                                            <outlet property="labelCard3Name" destination="kib-4D-OhE" id="XYv-X7-Ztm"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="e2A-E1-vBW" id="TF6-ZQ-gOA"/>
+                                    <outlet property="delegate" destination="e2A-E1-vBW" id="IuN-X6-7Lz"/>
+                                </connections>
                             </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="1st-cc-gET"/>
@@ -61,6 +82,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="card tab3" id="0yd-Yo-Way"/>
+                    <connections>
+                        <outlet property="card3CollectionView" destination="Pul-WM-dtB" id="mEJ-2e-bR0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8gZ-fh-IT6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -84,28 +108,50 @@
                                     <inset key="sectionInset" minX="2" minY="2" maxX="2" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="hKT-Ew-qIw">
-                                        <rect key="frame" x="2" y="2" width="190" height="190"/>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="hKT-Ew-qIw" customClass="card4ViewCell" customModule="ImplementTabsWithCollectionView" customModuleProvider="target">
+                                        <rect key="frame" x="2" y="2" width="182" height="190"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="vri-4N-YWH">
-                                            <rect key="frame" x="0.0" y="0.0" width="190" height="190"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="182" height="190"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="2C" translatesAutoresizingMaskIntoConstraints="NO" id="xCL-ah-q9g">
-                                                    <rect key="frame" x="8" y="0.0" width="174" height="134"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="2C" translatesAutoresizingMaskIntoConstraints="NO" id="xCL-ah-q9g">
+                                                    <rect key="frame" x="8" y="0.0" width="166" height="140"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="166" id="Nk4-jS-3LA"/>
+                                                        <constraint firstAttribute="height" constant="140" id="xKX-TG-CR1"/>
+                                                    </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="card black" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oh7-ib-0oX">
-                                                    <rect key="frame" x="8" y="153" width="174" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="card black" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oh7-ib-0oX">
+                                                    <rect key="frame" x="8" y="150" width="174" height="24"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="24" id="3xH-r9-ESK"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
                                                     <color key="textColor" red="0.58081901069999997" green="0.088427625600000004" blue="0.31863921880000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="xCL-ah-q9g" secondAttribute="trailing" constant="8" id="4dz-hq-sFM"/>
+                                                <constraint firstItem="xCL-ah-q9g" firstAttribute="top" secondItem="vri-4N-YWH" secondAttribute="top" id="DqL-2q-22L"/>
+                                                <constraint firstItem="xCL-ah-q9g" firstAttribute="leading" secondItem="vri-4N-YWH" secondAttribute="leading" constant="8" id="Jtw-gP-RTY"/>
+                                                <constraint firstItem="Oh7-ib-0oX" firstAttribute="leading" secondItem="vri-4N-YWH" secondAttribute="leading" constant="8" id="Na8-yG-kbO"/>
+                                                <constraint firstItem="Oh7-ib-0oX" firstAttribute="top" secondItem="xCL-ah-q9g" secondAttribute="bottom" constant="10" id="WQX-dF-5Pr"/>
+                                                <constraint firstAttribute="trailing" secondItem="Oh7-ib-0oX" secondAttribute="trailing" id="YTu-bl-72I"/>
+                                                <constraint firstItem="Oh7-ib-0oX" firstAttribute="top" secondItem="xCL-ah-q9g" secondAttribute="bottom" constant="10" id="dcD-ga-pFy"/>
+                                            </constraints>
                                         </collectionViewCellContentView>
+                                        <connections>
+                                            <outlet property="imageCard4View" destination="xCL-ah-q9g" id="KON-A7-qYu"/>
+                                            <outlet property="labelCard4Name" destination="Oh7-ib-0oX" id="7vN-bT-tVb"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="8wN-LD-P92" id="b3z-xa-kHd"/>
+                                    <outlet property="delegate" destination="8wN-LD-P92" id="0Lc-XI-gYI"/>
+                                </connections>
                             </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="jnz-a5-p9g"/>
@@ -118,10 +164,13 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="card tab4" id="YB4-QM-pdy"/>
+                    <connections>
+                        <outlet property="card4CollectionView" destination="dju-oF-Cq3" id="rtN-ML-GHk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XUN-va-M6S" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3777.8625954198474" y="145.77464788732394"/>
+            <point key="canvasLocation" x="3779" y="136"/>
         </scene>
         <!--card tab1-->
         <scene sceneID="yeV-np-1zF">
@@ -141,28 +190,58 @@
                                     <inset key="sectionInset" minX="2" minY="2" maxX="2" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="quX-z6-Y3e">
-                                        <rect key="frame" x="2" y="2" width="190" height="190"/>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="quX-z6-Y3e" customClass="card1ViewCell" customModule="ImplementTabsWithCollectionView" customModuleProvider="target">
+                                        <rect key="frame" x="2" y="2" width="192" height="190"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Jgt-7j-mA9">
-                                            <rect key="frame" x="0.0" y="0.0" width="190" height="190"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="192" height="190"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="10C" translatesAutoresizingMaskIntoConstraints="NO" id="R5c-fl-SzF">
-                                                    <rect key="frame" x="8" y="8" width="174" height="134"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="10C" translatesAutoresizingMaskIntoConstraints="NO" id="R5c-fl-SzF">
+                                                    <rect key="frame" x="11" y="5.6666666666666714" width="170" height="130"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="170" id="5bm-sk-VWP"/>
+                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="130" id="lFD-ed-FiZ"/>
+                                                        <constraint firstAttribute="height" constant="130" id="wAj-pn-76g"/>
+                                                    </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="card1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nqy-5r-Ig2">
-                                                    <rect key="frame" x="17" y="150" width="165" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="card1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nqy-5r-Ig2">
+                                                    <rect key="frame" x="17" y="145.66666666666666" width="165" height="25.333333333333343"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="25.329999999999998" id="OhT-eX-BMf"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="21"/>
                                                     <color key="textColor" red="0.58081901069999997" green="0.088427625600000004" blue="0.31863921880000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="Nqy-5r-Ig2" secondAttribute="trailing" constant="10" id="37m-21-KS5"/>
+                                                <constraint firstItem="Nqy-5r-Ig2" firstAttribute="top" secondItem="R5c-fl-SzF" secondAttribute="bottom" constant="10" id="AUZ-Nu-5m9"/>
+                                                <constraint firstItem="Nqy-5r-Ig2" firstAttribute="leading" secondItem="Jgt-7j-mA9" secondAttribute="leading" constant="17" id="AYM-L9-cOY"/>
+                                                <constraint firstAttribute="trailing" secondItem="Nqy-5r-Ig2" secondAttribute="trailing" constant="10" id="F9k-pn-tFq"/>
+                                                <constraint firstItem="Nqy-5r-Ig2" firstAttribute="leading" secondItem="Jgt-7j-mA9" secondAttribute="leading" constant="17" id="JBm-Uf-wYv"/>
+                                                <constraint firstItem="R5c-fl-SzF" firstAttribute="leading" secondItem="Jgt-7j-mA9" secondAttribute="leading" constant="11" id="Pz6-GX-rmO"/>
+                                                <constraint firstItem="Nqy-5r-Ig2" firstAttribute="top" secondItem="R5c-fl-SzF" secondAttribute="bottom" id="bQb-cf-7jh"/>
+                                                <constraint firstItem="R5c-fl-SzF" firstAttribute="leading" secondItem="Jgt-7j-mA9" secondAttribute="leading" constant="11" id="coy-IO-Cnk"/>
+                                                <constraint firstAttribute="trailing" secondItem="R5c-fl-SzF" secondAttribute="trailing" constant="11" id="dEz-8D-Ivx"/>
+                                                <constraint firstItem="Nqy-5r-Ig2" firstAttribute="top" secondItem="R5c-fl-SzF" secondAttribute="bottom" constant="10" id="da8-q3-7KF"/>
+                                                <constraint firstItem="Nqy-5r-Ig2" firstAttribute="top" secondItem="R5c-fl-SzF" secondAttribute="bottom" constant="10" id="fUW-SD-f20"/>
+                                                <constraint firstAttribute="trailing" secondItem="R5c-fl-SzF" secondAttribute="trailing" constant="11" id="vn0-Qi-tde"/>
+                                                <constraint firstAttribute="bottom" secondItem="Nqy-5r-Ig2" secondAttribute="bottom" constant="19" id="yVk-WH-M9v"/>
+                                                <constraint firstItem="R5c-fl-SzF" firstAttribute="top" secondItem="Jgt-7j-mA9" secondAttribute="top" constant="5.6699999999999999" id="zox-bB-eOt"/>
+                                            </constraints>
                                         </collectionViewCellContentView>
+                                        <connections>
+                                            <outlet property="imageCard1View" destination="R5c-fl-SzF" id="LyL-xE-bSq"/>
+                                            <outlet property="labelCard1Name" destination="Nqy-5r-Ig2" id="yyG-tL-yGx"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="gD0-IY-aKk" id="Peg-p5-8wh"/>
+                                    <outlet property="delegate" destination="gD0-IY-aKk" id="lpx-ms-1jb"/>
+                                </connections>
                             </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="8EB-nx-PoY"/>
@@ -175,6 +254,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="card tab1" id="vmE-vy-ocJ"/>
+                    <connections>
+                        <outlet property="card1CollectionView" destination="L8F-Yv-EIz" id="dMJ-TW-1l0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BTS-gy-LEb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -198,28 +280,45 @@
                                     <inset key="sectionInset" minX="2" minY="2" maxX="2" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="geM-oW-43R">
-                                        <rect key="frame" x="2" y="2" width="190" height="190"/>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="geM-oW-43R" customClass="card2ViewCell" customModule="ImplementTabsWithCollectionView" customModuleProvider="target">
+                                        <rect key="frame" x="2" y="2" width="181" height="190"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="HwA-s8-rmM">
-                                            <rect key="frame" x="0.0" y="0.0" width="190" height="190"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="181" height="190"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="10D" translatesAutoresizingMaskIntoConstraints="NO" id="H10-0P-ZUM">
-                                                    <rect key="frame" x="8" y="8" width="174" height="134"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="10D" translatesAutoresizingMaskIntoConstraints="NO" id="H10-0P-ZUM">
+                                                    <rect key="frame" x="8" y="8" width="165" height="140"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="165" id="Fuz-mB-NUa"/>
+                                                        <constraint firstAttribute="height" constant="140" id="gCT-4Q-xwU"/>
+                                                    </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="card red" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wfm-8V-Sby">
-                                                    <rect key="frame" x="8" y="150" width="174" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="card red" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wfm-8V-Sby">
+                                                    <rect key="frame" x="8" y="156" width="174" height="21"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
                                                     <color key="textColor" red="0.58081901069999997" green="0.088427625600000004" blue="0.31863921880000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="H10-0P-ZUM" firstAttribute="top" secondItem="HwA-s8-rmM" secondAttribute="topMargin" id="33e-6Q-JKw"/>
+                                                <constraint firstItem="Wfm-8V-Sby" firstAttribute="top" secondItem="H10-0P-ZUM" secondAttribute="bottom" constant="9" id="7l4-gc-7Lc"/>
+                                                <constraint firstItem="Wfm-8V-Sby" firstAttribute="top" secondItem="H10-0P-ZUM" secondAttribute="bottom" constant="8" id="8au-WZ-Pbc"/>
+                                                <constraint firstItem="H10-0P-ZUM" firstAttribute="leading" secondItem="HwA-s8-rmM" secondAttribute="leadingMargin" id="Fbh-Uk-DkJ"/>
+                                                <constraint firstItem="H10-0P-ZUM" firstAttribute="trailing" secondItem="HwA-s8-rmM" secondAttribute="trailingMargin" id="eHB-7T-FkI"/>
+                                            </constraints>
                                         </collectionViewCellContentView>
+                                        <connections>
+                                            <outlet property="imageCard2View" destination="H10-0P-ZUM" id="JXs-Ab-6gS"/>
+                                            <outlet property="labelCard2Name" destination="Wfm-8V-Sby" id="7Vc-jZ-3ot"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="DUD-wa-eT1" id="fJy-ED-Avk"/>
+                                    <outlet property="delegate" destination="DUD-wa-eT1" id="CNE-yl-7OQ"/>
+                                </connections>
                             </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="X1M-fj-oNY"/>
@@ -232,6 +331,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="card tab2" id="Ywi-zP-DXr"/>
+                    <connections>
+                        <outlet property="card2CollectionView" destination="wx7-gJ-6Q7" id="bqt-ac-FdF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R44-tO-jUG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -331,7 +433,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K7Q-xf-ugS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2851.1450381679388" y="145.77464788732394"/>
+            <point key="canvasLocation" x="2851" y="136"/>
         </scene>
     </scenes>
     <resources>

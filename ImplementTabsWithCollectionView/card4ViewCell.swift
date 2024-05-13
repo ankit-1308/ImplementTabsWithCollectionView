@@ -9,4 +9,7 @@ import UIKit
 
 class card4ViewCell: UICollectionViewCell {
     
+    @IBOutlet weak var labelCard4Name: UILabel!
+    @IBOutlet weak var imageCard4View: UIImageView!
+    
 }
